@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brian Farrer — Strategy, M&A & Value Creation</title>
+<meta name="description" content="Brian Farrer — PE portfolio value creation and M&A professional. 15 years translating financial diligence into value creation, from Big 4 deal teams to a $4B healthcare operator.">
+<style>
+  :root{
+    --ink:#1B1B36; --indigo:#5A52A8; --indigo-soft:#9089C9;
+    --bronze:#B8763E; --bronze-deep:#9A6232; --bronze-wash:#F0E4D6;
+    --cream:#FBF9F4; --surface:#FFFFFF; --border:#E5E1D8;
+    --text:#2C2C2A; --muted:#6B6A64;
+    --maxw:1040px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--cream);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  h2{color:var(--ink);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px}
+  h2 .rule{display:inline-block;width:30px;height:2px;background:var(--bronze);vertical-align:middle;margin-right:10px}
+
+  /* Nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(251,249,244,.92);backdrop-filter:blur(8px);
+    border-bottom:.5px solid var(--border);transition:padding .2s}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:var(--maxw);margin:0 auto;transition:padding .2s}
+  nav.shrink .nav-in{padding:10px 24px}
+  .brand{color:var(--ink);font-weight:600;font-size:20px;letter-spacing:-.015em}
+  .brand .dot{color:var(--bronze)}
+  .brand:hover .dot{color:var(--bronze-deep)}
+  .nav-links{display:flex;align-items:center;gap:26px}
+  .nav-links a{color:var(--indigo);font-size:14px;transition:color .15s}
+  .nav-links a:hover{color:var(--ink)}
+  .btn{display:inline-block;border-radius:7px;font-size:14px;font-weight:500;cursor:pointer;border:none;transition:all .15s}
+  .nav-links a.btn-bronze{background:var(--bronze);color:#fff;padding:9px 18px;font-weight:600;letter-spacing:.01em;
+    border:1px solid var(--bronze);box-shadow:0 1px 2px rgba(27,27,54,.18)}
+  .nav-links a.btn-bronze:hover{background:var(--bronze-deep);color:#fff;border-color:var(--bronze-deep)}
+  .nav-toggle{display:none;background:none;border:none;color:var(--ink);font-size:22px;cursor:pointer}
+
+  /* Hero */
+  header.hero{background:var(--ink);color:#ECEAF8;padding:96px 0 88px}
+  .eyebrow{color:var(--indigo-soft);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+  .hero h1{font-size:46px;line-height:1.12;font-weight:600;margin:18px 0 0;letter-spacing:-.01em;color:#fff}
+  .hero .lede{color:#C4BEE8;font-size:18px;max-width:560px;margin:20px 0 0;line-height:1.55}
+  .hero .loc{color:var(--indigo-soft);font-size:14px;margin-top:14px}
+  .hero-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+  .btn-light{background:#ECEAF8;color:var(--ink);padding:11px 22px}
+  .btn-light:hover{background:#fff}
+  .btn-outline{background:transparent;border:1px solid var(--bronze);color:#D9A878;padding:11px 22px}
+  .btn-outline:hover{background:var(--bronze);color:#3A2410}
+
+  /* Metrics */
+  .metrics{background:var(--surface);border-bottom:.5px solid var(--border)}
+  .metrics-in{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:44px 0}
+  .metric{text-align:center}
+  .metric .num{color:var(--bronze);font-size:40px;font-weight:600;letter-spacing:-.02em;line-height:1}
+  .metric .lbl{color:var(--muted);font-size:13px;margin-top:8px}
+  .metrics-cap{text-align:center;color:var(--muted);font-size:12.5px;padding-bottom:30px;margin-top:-12px}
+
+  section{padding:72px 0}
+  section.alt{background:var(--surface);border-top:.5px solid var(--border);border-bottom:.5px solid var(--border)}
+
+  /* Filter chips */
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:30px}
+  .chip{border:.5px solid #CBC6D6;background:transparent;color:var(--indigo);padding:7px 15px;border-radius:18px;
+    font-size:13px;cursor:pointer;transition:all .15s}
+  .chip:hover{border-color:var(--indigo)}
+  .chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+  .role{background:var(--surface);border:.5px solid var(--border);border-left:2px solid var(--bronze);
+    border-radius:0 8px 8px 0;padding:22px 24px;margin-bottom:18px}
+  section.alt .role{background:var(--cream)}
+  .role-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px}
+  .role-co{color:var(--ink);font-weight:600;font-size:18px}
+  .role-meta{color:var(--muted);font-size:13px}
+  .role-title{color:var(--indigo);font-size:14px;font-weight:500;margin-top:2px}
+  .role-ctx{color:var(--muted);font-size:14px;margin:10px 0 14px;font-style:italic}
+  ul.bullets{list-style:none}
+  ul.bullets li{position:relative;padding:7px 0 7px 22px;font-size:15px;border-top:.5px solid var(--border)}
+  ul.bullets li:first-child{border-top:none}
+  ul.bullets li::before{content:"";position:absolute;left:2px;top:14px;width:6px;height:6px;border-radius:50%;background:var(--bronze)}
+  ul.bullets li .tag{display:inline-block;font-size:11px;color:var(--bronze-deep);background:var(--bronze-wash);
+    padding:1px 7px;border-radius:4px;margin-left:8px;vertical-align:1px}
+  li.hide{display:none}
+
+  /* Case studies */
+  .case{background:var(--surface);border:.5px solid var(--border);border-radius:9px;margin-bottom:12px;overflow:hidden}
+  section.alt .case{background:var(--cream)}
+  .case-btn{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:20px 24px;
+    display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .case-btn .ct{color:var(--ink);font-weight:500;font-size:17px}
+  .case-btn .cs{color:var(--muted);font-size:13.5px;margin-top:3px}
+  .case-plus{color:var(--bronze);font-size:24px;line-height:1;flex-shrink:0;transition:transform .2s}
+  .case.open .case-plus{transform:rotate(45deg)}
+  .case-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .case-inner{padding:0 24px 22px}
+  .sar{margin-top:14px}
+  .sar h4{color:var(--bronze-deep);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+  .sar p{font-size:15px;margin-bottom:2px}
+
+  /* Skills */
+  .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+  .skill-block h3{color:var(--ink);font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px;font-weight:600}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag-pill{background:#EDEAF6;color:#3A357A;font-size:13px;padding:5px 12px;border-radius:6px}
+  .tag-pill.cert{background:var(--bronze-wash);color:#7A4E22}
+  .gh-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;color:var(--bronze-deep);font-size:14px;font-weight:500}
+  .gh-link:hover{color:var(--ink)}
+  .gh-link svg{width:16px;height:16px;fill:currentColor}
+
+  /* Education */
+  .edu{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;
+    background:var(--surface);border:.5px solid var(--border);border-radius:9px;padding:20px 24px}
+  section.alt .edu{background:var(--cream)}
+  .edu .school{color:var(--ink);font-weight:600;font-size:17px}
+  .edu .deg{color:var(--muted);font-size:14px}
+
+  /* Footer */
+  footer{background:var(--ink);color:#ECEAF8;padding:64px 0 40px;text-align:center}
+  footer h2{color:#fff}
+  footer .ft-lede{color:#C4BEE8;font-size:18px;max-width:480px;margin:0 auto 26px}
+  .ft-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+  .ft-links a{display:inline-flex;align-items:center;gap:7px;border:1px solid #3A3A5E;color:#ECEAF8;
+    padding:10px 18px;border-radius:7px;font-size:14px;transition:all .15s}
+  .ft-links a:hover{border-color:var(--bronze);color:#D9A878}
+  .ft-links svg{width:16px;height:16px;fill:currentColor}
+  .ft-note{color:#6B66A0;font-size:12.5px;letter-spacing:.03em}
+
+  @media (max-width:720px){
+    .hero h1{font-size:34px}
+    .metrics-in{grid-template-columns:1fr;gap:28px;padding:36px 0}
+    .nav-links{position:absolute;top:100%;right:0;left:0;flex-direction:column;align-items:flex-start;
+      gap:0;background:var(--cream);border-bottom:.5px solid var(--border);padding:8px 0;display:none}
+    .nav-links.show{display:flex}
+    .nav-links a,.nav-links .btn{padding:12px 24px;width:100%}
+    .nav-toggle{display:block}
+    section{padding:52px 0}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{transition:none!important}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-in">
+    <a href="#top" class="brand">Brian Farrer<span class="dot">.</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" id="navToggle">≡</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#experience">Experience</a>
+      <a href="#cases">Case studies</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a href="Brian Farrer_Resume_2026.pdf" class="btn btn-bronze" target="_blank" rel="noopener">Résumé (PDF)</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">Strategy · M&amp;A · Operating partner mindset</p>
+    <h1>Turning diligence insight<br>into value creation.</h1>
+    <p class="lede">15 years translating financial diligence into value creation — from Big 4 deal teams to a $4B healthcare operator.</p>
+    <p class="loc">Chicago, IL</p>
+    <div class="hero-cta">
+      <a href="#experience" class="btn btn-light">View experience</a>
+      <a href="#contact" class="btn btn-outline">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<div class="metrics">
+  <div class="wrap">
+    <div class="metrics-in">
+      <div class="metric"><div class="num" data-target="500" data-prefix="$" data-suffix="M+">$0</div><div class="lbl">M&amp;A activity</div></div>
+      <div class="metric"><div class="num" data-target="4" data-prefix="$" data-suffix="B">$0</div><div class="lbl">multi-brand platform</div></div>
+      <div class="metric"><div class="num" data-target="4" data-prefix="" data-suffix="">0</div><div class="lbl">healthcare sub-sectors</div></div>
+    </div>
+    <p class="metrics-cap">Senior Director, TAG – The Aspen Group (2022–present)</p>
+  </div>
+</div>
+
+<section id="experience">
+  <div class="wrap">
+    <h2><span class="rule"></span>Experience</h2>
+    <div class="chips" id="chips">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="ma">M&amp;A</button>
+      <button class="chip" data-filter="value">Value creation</button>
+      <button class="chip" data-filter="analytics">Analytics</button>
+      <button class="chip" data-filter="pmo">Integration / PMO</button>
+    </div>
+
+    <div class="role">
+      <div class="role-head">
+        <div>
+          <div class="role-co">TAG – The Aspen Group</div>
+          <div class="role-title">Senior Director, Strategy &amp; Business Development</div>
+        </div>
+        <div class="role-meta">Feb 2022 – Present · Chicago, IL</div>
+      </div>
+      <p class="role-ctx">Key contributor to $500M+ of M&amp;A across a $4B PE-backed, multi-brand healthcare platform (urgent care, dental, veterinary, aesthetics).</p>
+      <ul class="bullets">
+        <li data-cat="pmo">Served as PMO lead for complex acquisitions and divestitures — coordinating with the buyer through SPA negotiation, fielding cross-functional diligence, and guiding field leadership through clinic-level operational transition.<span class="tag">Integration / PMO</span></li>
+        <li data-cat="value">Partnered with executive leadership to define one- and three-year growth plans and translate them into operational priorities tracked against KPIs; designed standardized playbooks for multi-site manager and regional director roles.<span class="tag">Value creation</span></li>
+        <li data-cat="analytics">Assumed interim head-of-finance capacity during CFO disruption in the urgent care business — built the analytical framework and reporting infrastructure used to evaluate demand trends and guide closure decisions.<span class="tag">Analytics</span></li>
+        <li data-cat="ma">Managed multiple concurrent M&amp;A processes including buy-side diligence, new-market assessments, and target screening, presenting investment recommendations to executive leadership.<span class="tag">M&amp;A</span></li>
+        <li data-cat="analytics">Built a cross-brand dynamic cohort model integrating disparate datasets to support de novo analysis, vintage performance tracking, and acquisition benchmarking; maintained a consolidated five-year projection model.<span class="tag">Analytics</span></li>
+        <li data-cat="value">Led consolidation of the marketing Center of Excellence across dental brands (budget &gt;$300M); ran real estate and ancillary-services analytics to support portfolio decisions.<span class="tag">Value creation</span></li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-head">
+        <div>
+          <div class="role-co">PricewaterhouseCoopers LLP</div>
+          <div class="role-title">Senior Manager, Deal Analytics &amp; Financial Due Diligence</div>
+        </div>
+        <div class="role-meta">Aug 2010 – Feb 2022 · Chicago, IL</div>
+      </div>
+      <p class="role-ctx">Progressed over 12 years from Assurance through Financial Due Diligence to Deal Analytics; built deep healthcare transaction expertise.</p>
+      <ul class="bullets">
+        <li data-cat="ma">Delivered buy-side and sell-side financial due diligence for PE sponsors and strategic acquirers — quality of earnings, EBITDA bridging, payer/modality mix, and revenue cycle analytics across multi-location platforms.<span class="tag">M&amp;A</span></li>
+        <li data-cat="analytics">Expanded team offerings to include same-center analysis, de novo modeling, physician productivity benchmarking, and payer reimbursement comparisons — doubling both team headcount and revenue.<span class="tag">Analytics</span></li>
+        <li data-cat="pmo">Served as client liaison across legal, tax, HR, and financial workstreams; supported SPA mechanics including net working capital and net debt, and led executive discussions on investment-thesis risk.<span class="tag">Integration / PMO</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="cases">
+  <div class="wrap">
+    <h2><span class="rule"></span>Signature case studies</h2>
+
+    <div class="case">
+      <button class="case-btn" aria-expanded="false">
+        <span><span class="ct">Interim finance leadership during CFO disruption</span><br><span class="cs">Stood up clinic-level performance analytics under pressure</span></span>
+        <span class="case-plus">+</span>
+      </button>
+      <div class="case-body"><div class="case-inner">
+        <div class="sar"><h4>Situation</h4><p>The urgent care business lost its CFO mid-cycle, leaving leadership without reliable clinic-level performance visibility.</p></div>
+        <div class="sar"><h4>Action</h4><p>Stepped into a head-of-finance capacity, built the analytical framework and reporting infrastructure to evaluate demand trends, and matured the organization's approach to clinic-level analysis.</p></div>
+        <div class="sar"><h4>Result</h4><p>Delivered data-driven recommendations on clinic closures and hours reductions that leadership acted on, stabilizing performance management through the transition.</p></div>
+      </div></div>
+    </div>
+
+    <div class="case">
+      <button class="case-btn" aria-expanded="false">
+        <span><span class="ct">Cross-brand dynamic cohort model</span><br><span class="cs">Unified disparate data for de novo and acquisition benchmarking</span></span>
+        <span class="case-plus">+</span>
+      </button>
+      <div class="case-body"><div class="case-inner">
+        <div class="sar"><h4>Situation</h4><p>De novo and acquisition performance lived in disconnected datasets across brands, making vintage comparisons and benchmarking slow and unreliable.</p></div>
+        <div class="sar"><h4>Action</h4><p>Designed and built a dynamic cohort model integrating the disparate sources, supporting de novo analysis, vintage performance tracking, and acquisition benchmarking, alongside a consolidated five-year cross-brand projection model.</p></div>
+        <div class="sar"><h4>Result</h4><p>Gave leadership a single analytical backbone for evaluating new units and targets, and supported a large-scale corporate refinancing process.</p></div>
+      </div></div>
+    </div>
+
+    <div class="case">
+      <button class="case-btn" aria-expanded="false">
+        <span><span class="ct">Marketing Center of Excellence consolidation</span><br><span class="cs">Consolidated a &gt;$300M marketing function across dental brands</span></span>
+        <span class="case-plus">+</span>
+      </button>
+      <div class="case-body"><div class="case-inner">
+        <div class="sar"><h4>Situation</h4><p>Marketing spend exceeding $300M was fragmented across multiple dental brands with limited shared standards.</p></div>
+        <div class="sar"><h4>Action</h4><p>Led the consolidation of the marketing Center of Excellence, aligning brands and bringing analytical rigor to spend and performance.</p></div>
+        <div class="sar"><h4>Result</h4><p>Created a consolidated function and decision framework that supported executive decision-making across the portfolio.</p></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2><span class="rule"></span>Skills &amp; tools</h2>
+    <div class="skill-grid">
+      <div class="skill-block">
+        <h3>Analytics &amp; technology</h3>
+        <div class="tags">
+          <span class="tag-pill">Excel (PowerQuery, PowerPivot)</span>
+          <span class="tag-pill">Power BI</span>
+          <span class="tag-pill">Alteryx</span>
+          <span class="tag-pill">SQL</span>
+          <span class="tag-pill">Tableau</span>
+          <span class="tag-pill">Workday Financials</span>
+          <span class="tag-pill">Claude Cowork</span>
+          <span class="tag-pill">EMR (Experity, Epic, NextGen, Greenway)</span>
+        </div>
+        <a class="gh-link" href="https://github.com/bfarrer" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          View GitHub
+        </a>
+      </div>
+      <div class="skill-block">
+        <h3>Certifications</h3>
+        <div class="tags">
+          <span class="tag-pill cert">CPA (Illinois)</span>
+          <span class="tag-pill cert">Alteryx Core Designer</span>
+          <span class="tag-pill cert">Udacity AI / ML Nanodegree</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <h3>Domains</h3>
+        <div class="tags">
+          <span class="tag-pill">M&amp;A execution</span>
+          <span class="tag-pill">Financial due diligence</span>
+          <span class="tag-pill">Value creation</span>
+          <span class="tag-pill">PMO &amp; integration</span>
+          <span class="tag-pill">Healthcare multi-site ops</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="education">
+  <div class="wrap">
+    <h2><span class="rule"></span>Education</h2>
+    <div class="edu">
+      <div class="school">DePaul University</div>
+      <div class="deg">B.S. Accountancy · Magna Cum Laude</div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <div class="ft-links">
+      <a href="mailto:farrerb@gmail.com">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 3.5A1.5 1.5 0 011.5 2h13A1.5 1.5 0 0116 3.5v9a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 010 12.5v-9zm1.5-.5a.5.5 0 00-.5.5v.4l7 4.2 7-4.2v-.4a.5.5 0 00-.5-.5h-13zM15 5.6l-7 4.2-7-4.2v6.9a.5.5 0 00.5.5h13a.5.5 0 00.5-.5V5.6z"/></svg>
+        farrerb@gmail.com
+      </a>
+      <a href="https://linkedin.com/in/brianfarrer" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 1.6C0 .7.7 0 1.6 0h12.8c.9 0 1.6.7 1.6 1.6v12.8c0 .9-.7 1.6-1.6 1.6H1.6C.7 16 0 15.3 0 14.4V1.6zM4.8 13.3V6.2H2.4v7.1h2.4zM3.6 5.2c.8 0 1.3-.5 1.3-1.2 0-.7-.5-1.2-1.3-1.2s-1.3.5-1.3 1.2c0 .7.5 1.2 1.3 1.2zM8.5 13.3v-4c0-.2 0-.4.1-.6.2-.4.5-.9 1.2-.9.9 0 1.2.7 1.2 1.6v3.9h2.4V9.1c0-2.2-1.2-3.2-2.7-3.2-1.3 0-1.8.7-2.1 1.2h-.02V6.2H6.1c0 .7 0 7.1 0 7.1h2.4z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/bfarrer" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+    </div>
+    <p class="ft-note">Built with Claude Cowork</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Mobile nav
+  var toggle=document.getElementById('navToggle'),links=document.getElementById('navLinks');
+  toggle.addEventListener('click',function(){
+    var open=links.classList.toggle('show');
+    toggle.setAttribute('aria-expanded',open);
+  });
+  links.addEventListener('click',function(e){if(e.target.tagName==='A')links.classList.remove('show');});
+
+  // Nav shrink on scroll
+  var nav=document.getElementById('nav');
+  window.addEventListener('scroll',function(){
+    nav.classList.toggle('shrink',window.scrollY>40);
+  });
+
+  // Experience filter
+  var chips=document.querySelectorAll('.chip'),items=document.querySelectorAll('ul.bullets li');
+  chips.forEach(function(c){
+    c.addEventListener('click',function(){
+      chips.forEach(function(x){x.classList.remove('active');});
+      c.classList.add('active');
+      var f=c.getAttribute('data-filter');
+      items.forEach(function(li){
+        li.classList.toggle('hide',!(f==='all'||li.getAttribute('data-cat')===f));
+      });
+    });
+  });
+
+  // Case study expand
+  document.querySelectorAll('.case-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var card=btn.parentElement,body=card.querySelector('.case-body'),open=card.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open);
+      body.style.maxHeight=open?body.scrollHeight+'px':'0';
+    });
+  });
+
+  // Count-up metrics (respects reduced motion)
+  var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var nums=document.querySelectorAll('.metric .num');
+  function fmt(el,v){el.textContent=(el.dataset.prefix||'')+v+(el.dataset.suffix||'');}
+  if(reduce){nums.forEach(function(el){fmt(el,el.dataset.target);});}
+  else{
+    var seen=false;
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting&&!seen){seen=true;
+          nums.forEach(function(el){
+            var target=+el.dataset.target,start=null,dur=1100;
+            function step(ts){if(!start)start=ts;var p=Math.min((ts-start)/dur,1);
+              fmt(el,Math.round(p*target));if(p<1)requestAnimationFrame(step);}
+            requestA
