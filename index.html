@@ -400,4 +400,14 @@
             var target=+el.dataset.target,start=null,dur=1100;
             function step(ts){if(!start)start=ts;var p=Math.min((ts-start)/dur,1);
               fmt(el,Math.round(p*target));if(p<1)requestAnimationFrame(step);}
-            requestA
+            requestAnimationFrame(step);
+          });
+        }
+      });
+    },{threshold:.4});
+    var m=document.querySelector('.metrics');if(m)io.observe(m);
+  }
+})();
+</script>
+</body>
+</html>
